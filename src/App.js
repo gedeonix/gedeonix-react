@@ -35,6 +35,13 @@ class App extends Component {
             <LightButton>Light</LightButton>
             <DarkButton>Dark</DarkButton>
 
+            <h3>Size</h3>
+            <Button xs>Extra small</Button>
+            <Button sm>Small</Button>
+            <Button>Normal</Button>
+            <Button md>Middle</Button>
+            <Button lg>Large</Button>
+
           </div>
         </Body>
       </ThemeProvider>

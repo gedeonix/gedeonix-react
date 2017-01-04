@@ -2,6 +2,13 @@ export const light = {
   color: '#606060',
   background: '#ffffff',
 
+  button: {
+    borderWidth: '1px',
+    fontSize: '1rem',
+    padding: '0.5em 0.5em',
+    radius: '4px'
+  },
+
   default: {
     color: '#606060',
     background: 'transparent',
@@ -85,6 +92,5 @@ export const dark = {
   color: '#ffffff',
   background: '#606060'
 };
-
 
 export default light;

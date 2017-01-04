@@ -10,14 +10,30 @@ const styleButton = (props) => css`
   }
 `;
 
+const fontSize = (props) => {
+  if(props.xs) return '0.6rem';
+  if(props.sm) return '0.8rem';
+  if(props.md) return '1.2rem';
+  if(props.lg) return '1.6rem';
+  return props.theme.button.fontSize;
+};
+
+const padding = (props) => {
+  if(props.xs) return '0.5em 1em';
+  if(props.sm) return '0.5em 1em';
+  if(props.md) return '0.45em 1em';
+  if(props.lg) return '0.4em 1em';
+  return props.theme.button.padding;
+};
+
 const Button = styled.button`
   border-style: solid;
-  border-radius: 3px;
-  border-width: 2px;  
+  border-radius: ${props => props.theme.button.radius};
+  border-width: ${props => props.theme.button.borderWidth};  
+  padding: ${props => padding(props)};
   cursor: pointer;
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
+  font-size: ${props => fontSize(props)};
+  margin: 0.1em;
 `;
 
 export const DefaultButton = styled(Button)`
