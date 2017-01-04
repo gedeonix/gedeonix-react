@@ -1,58 +1,51 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const styleButton = (props) => css`
+  background-color: ${props.background};
+  border-color: ${props.border};
+  color: ${props.color};
+  &:hover {
+    border-color: ${props.hover.border};
+    color: ${props.hover.color};
+  }
+`;
 
 const Button = styled.button`
-  background: ${props => props.theme.default.background};
-  border: 2px solid ${props => props.theme.default.border};  
+  border-style: solid;
   border-radius: 3px;
-  color: ${props => props.theme.default.color};
+  border-width: 2px;  
   cursor: pointer;
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  &:hover {
-    border-color: ${props => props.theme.default.hover};
-    color: #c0c0c0;
-  }
+`;
+
+export const DefaultButton = styled(Button)`
+  ${props => styleButton(props.theme.default)}
 `;
 
 export const PrimaryButton = styled(Button)`
-  background-color: ${props => props.theme.primary.background};
-  border-color: ${props => props.theme.primary.border};
-  color: ${props => props.theme.primary.color};
-  &:hover {
-    border-color: ${props => props.theme.primary.hover};
-    color: #ffffff;
-  }
+  ${props => styleButton(props.theme.primary)}
 `;
 
 export const SuccessButton = styled(Button)`
-  background-color: ${props => props.theme.success.background};
-  border-color: ${props => props.theme.success.border};
-  color: ${props => props.theme.success.color};
-  &:hover {
-    border-color: ${props => props.theme.success.hover};
-    color: #ffffff;
-  }
+  ${props => styleButton(props.theme.success)}
 `;
 
 export const WarningButton = styled(Button)`
-  background-color: ${props => props.theme.warning.background};
-  border-color: ${props => props.theme.warning.border};
-  color: ${props => props.theme.warning.color};
-  &:hover {
-    border-color: ${props => props.theme.warning.hover};
-    color: #ffffff;
-  }
+  ${props => styleButton(props.theme.warning)}
 `;
 
 export const DangerButton = styled(Button)`
-  background-color: ${props => props.theme.danger.background};
-  border-color: ${props => props.theme.danger.border};
-  color: ${props => props.theme.danger.color};
-  &:hover {
-    border-color: ${props => props.theme.danger.hover};
-    color: #ffffff;
-  }
+  ${props => styleButton(props.theme.danger)}
 `;
 
-export default Button;
+export const LightButton = styled(Button)`
+  ${props => styleButton(props.theme.light)}
+`;
+
+export const DarkButton = styled(Button)`
+  ${props => styleButton(props.theme.dark)}
+`;
+
+export default DefaultButton;
