@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, {css} from "styled-components";
 
 export const styleButton = (props, button) => css`
@@ -7,6 +8,12 @@ export const styleButton = (props, button) => css`
   &:hover {
     border-color: ${button.hover == undefined ? 'inherited' : button.hover.border};
     color: ${button.hover == undefined ? 'inherited' : button.hover.color};
+  }
+  &:disabled {
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+    color: #808080 !important;
+    cursor: not-allowed;
   }
 `;
 
@@ -40,6 +47,12 @@ export const Button = styled.button`
   text-align: center;
   ${props => props.square || props.circle ? 'height: 40px; width: 40px;' : ''}
 `;
+
+/*
+export const Button = ({ disabled, type, ...props }) => {
+  return <button {...props} type={type} disabled={disabled} />
+};
+*/
 
 export const DefaultButton = styled(Button)`${props => styleButton(props, props.theme.default)}`;
 export const PrimaryButton = styled(Button)`${props => styleButton(props, props.theme.primary)}`;

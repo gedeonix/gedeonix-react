@@ -69,6 +69,15 @@ storiesOf('Components', module)
         <Button md>Middle</Button>
         <Button lg>Large</Button>
 
+        <h2>Disabled</h2>
+        <Button disabled onClick={action('clicked')}>Default</Button>
+        <PrimaryButton disabled onClick={action('clicked')}>Primary</PrimaryButton>
+        <SuccessButton disabled onClick={action('clicked')}>Success</SuccessButton>
+        <WarningButton disabled onClick={action('clicked')}>Warning</WarningButton>
+        <DangerButton disabled onClick={action('clicked')}>Danger</DangerButton>
+        <LightButton disabled onClick={action('clicked')}>Light</LightButton>
+        <DarkButton disabled onClick={action('clicked')}>Dark</DarkButton>
+
         <h2>Icon & text</h2>
         <Button onClick={action('clicked')}><Icon name="check"/> Default</Button>
         <PrimaryButton onClick={action('clicked')}><Icon name="check"/> Primary</PrimaryButton>
@@ -137,6 +146,7 @@ storiesOf('Components', module)
         <DangerButton onClick={action('clicked')}>Remove <Icon name="remove"/></DangerButton>
         <DarkButton onClick={action('clicked')}>Options <Icon name="chevron-down"/></DarkButton>
         <WarningButton onClick={action('clicked')} outline>Print <Icon name="print"/></WarningButton>
+        <LightButton onClick={action('clicked')} outline>Download <Icon name="download"/></LightButton>
         <SuccessButton onClick={action('clicked')} circle><Icon name="thumbs-o-up"/></SuccessButton>
         <DangerButton onClick={action('clicked')} circle><Icon name="thumbs-o-down"/></DangerButton>
 
