@@ -8,6 +8,7 @@ import Body from "../components/Body";
 import Avatar from '../components/Avatar';
 import { Container, FluidContainer } from '../components/Container';
 import Button, {PrimaryButton, SuccessButton, WarningButton, DangerButton, LightButton, DarkButton} from '../components/Button';
+import { TwitterButton, FacebookButton, GoogleButton, GithubButton, RssButton } from '../components/Social';
 import { Input } from '../components/Input';
 import { Icon, IconButton } from '../components/Icon';
 import { Row, Col } from '../components/Grid';
@@ -68,6 +69,77 @@ storiesOf('Components', module)
         <Button md>Middle</Button>
         <Button lg>Large</Button>
 
+        <h2>Icon & text</h2>
+        <Button onClick={action('clicked')}><Icon name="check"/> Default</Button>
+        <PrimaryButton onClick={action('clicked')}><Icon name="check"/> Primary</PrimaryButton>
+        <SuccessButton onClick={action('clicked')}><Icon name="check"/> Success</SuccessButton>
+        <WarningButton onClick={action('clicked')}><Icon name="check"/> Warning</WarningButton>
+        <DangerButton onClick={action('clicked')}><Icon name="check"/> Danger</DangerButton>
+        <LightButton onClick={action('clicked')}><Icon name="check"/> Light</LightButton>
+        <DarkButton onClick={action('clicked')}><Icon name="check"/> Dark</DarkButton>
+
+        <h2>Only icon</h2>
+        <Button onClick={action('clicked')}><Icon name="check"/></Button>
+        <PrimaryButton onClick={action('clicked')}><Icon name="check"/></PrimaryButton>
+        <SuccessButton onClick={action('clicked')}><Icon name="check"/></SuccessButton>
+        <WarningButton onClick={action('clicked')}><Icon name="check"/></WarningButton>
+        <DangerButton onClick={action('clicked')}><Icon name="check"/></DangerButton>
+        <LightButton onClick={action('clicked')}><Icon name="check"/></LightButton>
+        <DarkButton onClick={action('clicked')}><Icon name="check"/></DarkButton>
+
+        <h2>Square</h2>
+        <Button onClick={action('clicked')} square><Icon name="check"/></Button>
+        <PrimaryButton onClick={action('clicked')} square><Icon name="check"/></PrimaryButton>
+        <SuccessButton onClick={action('clicked')} square><Icon name="check"/></SuccessButton>
+        <WarningButton onClick={action('clicked')} square><Icon name="check"/></WarningButton>
+        <DangerButton onClick={action('clicked')} square><Icon name="check"/></DangerButton>
+        <LightButton onClick={action('clicked')} square><Icon name="check"/></LightButton>
+        <DarkButton onClick={action('clicked')} square><Icon name="check"/></DarkButton>
+        <br/>
+        <Button onClick={action('clicked')} square xs><Icon name="check"/></Button>
+        <Button onClick={action('clicked')} square sm><Icon name="check"/></Button>
+        <Button onClick={action('clicked')} square><Icon name="check"/></Button>
+        <Button onClick={action('clicked')} square md><Icon name="check"/></Button>
+        <Button onClick={action('clicked')} square lg><Icon name="check"/></Button>
+
+        <h2>Circle</h2>
+        <Button onClick={action('clicked')} circle><Icon name="check"/></Button>
+        <PrimaryButton onClick={action('clicked')} circle><Icon name="check"/></PrimaryButton>
+        <SuccessButton onClick={action('clicked')} circle><Icon name="check"/></SuccessButton>
+        <WarningButton onClick={action('clicked')} circle><Icon name="check"/></WarningButton>
+        <DangerButton onClick={action('clicked')} circle><Icon name="check"/></DangerButton>
+        <LightButton onClick={action('clicked')} circle><Icon name="check"/></LightButton>
+        <DarkButton onClick={action('clicked')} circle><Icon name="check"/></DarkButton>
+        <br/>
+        <Button onClick={action('clicked')} circle xs><Icon name="check"/></Button>
+        <Button onClick={action('clicked')} circle sm><Icon name="check"/></Button>
+        <Button onClick={action('clicked')} circle><Icon name="check"/></Button>
+        <Button onClick={action('clicked')} circle md><Icon name="check"/></Button>
+        <Button onClick={action('clicked')} circle lg><Icon name="check"/></Button>
+
+        <h2>Social</h2>
+        <TwitterButton onClick={action('clicked')}><Icon name="twitter"/> Twitter</TwitterButton>
+        <FacebookButton onClick={action('clicked')}><Icon name="facebook"/> Facebook</FacebookButton>
+        <GoogleButton onClick={action('clicked')}><Icon name="google"/> Google</GoogleButton>
+        <GithubButton onClick={action('clicked')}><Icon name="github"/> Github</GithubButton>
+        <RssButton onClick={action('clicked')}><Icon name="rss"/> Rss</RssButton>
+        <br/>
+        <TwitterButton onClick={action('clicked')} circle><Icon name="twitter"/></TwitterButton>
+        <FacebookButton onClick={action('clicked')} circle><Icon name="facebook"/></FacebookButton>
+        <GoogleButton onClick={action('clicked')} circle><Icon name="google"/></GoogleButton>
+        <GithubButton onClick={action('clicked')} circle><Icon name="github"/></GithubButton>
+        <RssButton onClick={action('clicked')} circle><Icon name="rss"/></RssButton>
+
+        <h2>Misc</h2>
+        <Button onClick={action('clicked')}><Icon name="angle-left"/></Button>
+        <Button onClick={action('clicked')}><Icon name="angle-right"/></Button>
+        <PrimaryButton onClick={action('clicked')}><Icon name="plus"/> Add</PrimaryButton>
+        <DangerButton onClick={action('clicked')}>Remove <Icon name="remove"/></DangerButton>
+        <DarkButton onClick={action('clicked')}>Options <Icon name="chevron-down"/></DarkButton>
+        <WarningButton onClick={action('clicked')} outline>Print <Icon name="print"/></WarningButton>
+        <SuccessButton onClick={action('clicked')} circle><Icon name="thumbs-o-up"/></SuccessButton>
+        <DangerButton onClick={action('clicked')} circle><Icon name="thumbs-o-down"/></DangerButton>
+
       </dev>
     </ThemeProvider>
   ))
@@ -78,6 +150,19 @@ storiesOf('Components', module)
         <Icon name="plus"/>
         <Icon name="bars"/>
         <Icon name="minus"/>
+
+        <h2>Spin</h2>
+        <Icon spin name="circle-o-notch"/>
+        <Icon spin name="refresh"/>
+        <Icon spin name="spinner"/>
+        <Icon spin name="cog"/>
+
+        <h2>Pulse</h2>
+        <Icon pulse name="cog"/>
+        <Icon pulse name="refresh"/>
+        <Icon pulse name="spinner"/>
+        <Icon pulse name="cog"/>
+
         <h1>IconButton</h1>
         <IconButton icon="plus" onClick={action('clicked')}/>
       </dev>

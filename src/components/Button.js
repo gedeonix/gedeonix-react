@@ -1,12 +1,12 @@
 import styled, {css} from "styled-components";
 
-const styleButton = (props, button) => css`
+export const styleButton = (props, button) => css`
   background-color: ${props.outline ? 'transparent' : button.background};
-  border-color: ${button.border};
-  color: ${props.outline ? button.border : button.color};
+  border-color: ${button.border} || 'inherited';
+  color: ${props.outline ? (button.border || 'inherited') : button.color || 'inherited'};
   &:hover {
-    border-color: ${button.hover.border};
-    color: ${button.hover.color};
+    border-color: ${button.hover == undefined ? 'inherited' : button.hover.border};
+    color: ${button.hover == undefined ? 'inherited' : button.hover.color};
   }
 `;
 
@@ -19,6 +19,7 @@ const fontSize = (props) => {
 };
 
 const padding = (props) => {
+  if (props.square || props.circle) return '0';
   if (props.xs) return '0.4em 1em';
   if (props.sm) return '0.5em 1em';
   if (props.md) return '0.45em 1em';
@@ -26,9 +27,9 @@ const padding = (props) => {
   return props.theme.button.padding;
 };
 
-const Button = styled.button`
+export const Button = styled.button`
   border-style: solid;
-  border-radius: ${props => props.resetRadius ? 0 : props.round ? '1000px': props.theme.button.radius};
+  border-radius: ${props => props.resetRadius ? 0 : props.round ? '1000px': props.circle ? '50%': props.theme.button.radius};
   border-width: ${props => props.theme.button.borderWidth};  
   padding: ${props => padding(props)};
   cursor: pointer;
@@ -36,6 +37,8 @@ const Button = styled.button`
   margin: 0.1em;
   transition: all .2s ease-in-out;
   ${props => props.block ? 'width: 100%;' : ''}
+  text-align: center;
+  ${props => props.square || props.circle ? 'height: 40px; width: 40px;' : ''}
 `;
 
 export const DefaultButton = styled(Button)`${props => styleButton(props, props.theme.default)}`;

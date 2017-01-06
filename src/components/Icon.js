@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 export function Icon(props) {
-  return <i className={`fa fa-${props.name}`}></i>;
+  let attr = props.spin ? 'fa-spin ' : props.pulse ? 'fa-pulse ' : '';
+  return <i className={`fa ${attr}fa-${props.name}`}></i>;
 }
 
 const Wrapper = styled.div`
