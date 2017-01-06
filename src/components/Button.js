@@ -34,6 +34,8 @@ const Button = styled.button`
   cursor: pointer;
   font-size: ${props => fontSize(props)};
   margin: 0.1em;
+  transition: all .2s ease-in-out;
+  ${props => props.block ? 'width: 100%;' : ''}
 `;
 
 export const DefaultButton = styled(Button)`${props => styleButton(props.theme.default)}`;
