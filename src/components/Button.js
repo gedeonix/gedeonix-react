@@ -11,7 +11,7 @@ const styleButton = (props, button) => css`
 `;
 
 const fontSize = (props) => {
-  if (props.xs) return '0.6rem';
+  if (props.xs) return '0.7rem';
   if (props.sm) return '0.8rem';
   if (props.md) return '1.2rem';
   if (props.lg) return '1.6rem';
@@ -19,7 +19,7 @@ const fontSize = (props) => {
 };
 
 const padding = (props) => {
-  if (props.xs) return '0.5em 1em';
+  if (props.xs) return '0.4em 1em';
   if (props.sm) return '0.5em 1em';
   if (props.md) return '0.45em 1em';
   if (props.lg) return '0.4em 1em';

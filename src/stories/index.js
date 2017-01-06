@@ -8,6 +8,7 @@ import Body from "../components/Body";
 import Avatar from '../components/Avatar';
 import { Container, FluidContainer } from '../components/Container';
 import Button, {PrimaryButton, SuccessButton, WarningButton, DangerButton, LightButton, DarkButton} from '../components/Button';
+import { Input } from '../components/Input';
 import { Icon, IconButton } from '../components/Icon';
 import { Row, Col } from '../components/Grid';
 import { Table, Th, Td } from '../components/Table';
@@ -17,7 +18,7 @@ import Drawer, { DrawerHeader, DrawerItem } from '../components/Drawer';
 storiesOf('Components', module)
   .add('Button', () => (
     <ThemeProvider theme={theme}>
-      <Body>
+      <dev>
         <h1>Button</h1>
         <Button onClick={action('clicked')}>Button</Button>
 
@@ -67,32 +68,38 @@ storiesOf('Components', module)
         <Button md>Middle</Button>
         <Button lg>Large</Button>
 
-      </Body>
+      </dev>
     </ThemeProvider>
   ))
   .add('Icon & IconButton', () => (
     <ThemeProvider theme={theme}>
-      <Body>
+      <dev>
         <h1>Icon</h1>
         <Icon name="plus"/>
         <Icon name="bars"/>
         <Icon name="minus"/>
         <h1>IconButton</h1>
         <IconButton icon="plus" onClick={action('clicked')}/>
-      </Body>
+      </dev>
     </ThemeProvider>
   ))
   .add('Input', () => (
     <ThemeProvider theme={theme}>
-      <Body>
-        todo...
-      </Body>
+      <dev>
+        <h1>Input</h1>
+        <Input placeholder="input..."/>
+        <h2>Size</h2>
+        <Input placeholder="xs..." xs/>
+        <br/><br/>
+        <Input placeholder="sm..." sm/>
+        <br/><br/>
+        <Input placeholder="default..."/>
+        <br/><br/>
+        <Input placeholder="md..." md/>
+        <br/><br/>
+        <Input placeholder="lg..." lg/>
+      </dev>
     </ThemeProvider>
-  ))
-  .add('Input', () => (
-    <div>
-      todo...
-    </div>
   ))
   .add('Link', () => (
     <div>
@@ -178,7 +185,7 @@ storiesOf('Containers', module)
     </div>
   ))
   .add('Tables', () => (
-    <Body>
+    <dev>
       <Table>
         <thead>
         <tr>
@@ -200,7 +207,7 @@ storiesOf('Containers', module)
         </tr>
         </tbody>
       </Table>
-    </Body>
+    </dev>
   ))
   .add('Tiles', () => (
     <div>
@@ -211,40 +218,40 @@ storiesOf('Containers', module)
 
 storiesOf('Grids', module)
   .add('Flex grid', () => (
-    <Body>
-    <Row>
-      <Col>1</Col>
-      <Col>2</Col>
-      <Col>3</Col>
-      <Col>4</Col>
-      <Col>5</Col>
-      <Col>6</Col>
-      <Col>7</Col>
-      <Col>8</Col>
-      <Col>9</Col>
-      <Col>10</Col>
-      <Col>11</Col>
-      <Col>12</Col>
-    </Row>
-    </Body>
+    <dev>
+      <Row>
+        <Col>1</Col>
+        <Col>2</Col>
+        <Col>3</Col>
+        <Col>4</Col>
+        <Col>5</Col>
+        <Col>6</Col>
+        <Col>7</Col>
+        <Col>8</Col>
+        <Col>9</Col>
+        <Col>10</Col>
+        <Col>11</Col>
+        <Col>12</Col>
+      </Row>
+    </dev>
   ))
 ;
 
 storiesOf('Navigation', module)
   .add('Drawer', () => (
-    <Body>
+    <dev>
       <Drawer open items={[]} position="relative">
         <DrawerHeader>Title</DrawerHeader>
         <DrawerItem>Item 1</DrawerItem>
         <DrawerItem>Item 2</DrawerItem>
         <DrawerItem>Item 3</DrawerItem>
       </Drawer>
-    </Body>
+    </dev>
   ))
   .add('AppBar', () => (
-    <Body>
+    <dev>
       <AppBar title="Title" toggleDrawer={action('toggle')} />
-    </Body>
+    </dev>
   ))
 ;
 
@@ -263,16 +270,16 @@ storiesOf('Typography', module)
 storiesOf('Themes', module)
   .add('Light', () => (
     <ThemeProvider theme={theme}>
-      <Body>
+      <dev>
         <DangerButton>Button</DangerButton>
-      </Body>
+      </dev>
     </ThemeProvider>
   ))
   .add('Dark', () => (
     <ThemeProvider theme={dark}>
-      <Body>
+      <dev>
         <DangerButton>Button</DangerButton>
-      </Body>
+      </dev>
     </ThemeProvider>
   ))
 ;

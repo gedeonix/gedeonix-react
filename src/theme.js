@@ -9,6 +9,17 @@ export const light = {
     radius: '4px'
   },
 
+  input: {
+    background: '#fdfdfd',
+    border: '#d4d4d4',
+    fontSize: '1rem',
+    padding: '0.7rem 0.5rem',
+    radius: '3px',
+    focus: {
+      background: '#ffffd0'
+    },
+  },
+
   default: {
     color: '#606060',
     background: 'transparent',
