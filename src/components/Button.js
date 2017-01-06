@@ -1,12 +1,12 @@
 import styled, {css} from "styled-components";
 
-const styleButton = (props) => css`
-  background-color: ${props.background};
-  border-color: ${props.border};
-  color: ${props.color};
+const styleButton = (props, button) => css`
+  background-color: ${props.outline ? 'transparent' : button.background};
+  border-color: ${button.border};
+  color: ${props.outline ? button.border : button.color};
   &:hover {
-    border-color: ${props.hover.border};
-    color: ${props.hover.color};
+    border-color: ${button.hover.border};
+    color: ${button.hover.color};
   }
 `;
 
@@ -28,7 +28,7 @@ const padding = (props) => {
 
 const Button = styled.button`
   border-style: solid;
-  border-radius: ${props => props.theme.button.radius};
+  border-radius: ${props => props.resetRadius ? 0 : props.round ? '1000px': props.theme.button.radius};
   border-width: ${props => props.theme.button.borderWidth};  
   padding: ${props => padding(props)};
   cursor: pointer;
@@ -38,12 +38,12 @@ const Button = styled.button`
   ${props => props.block ? 'width: 100%;' : ''}
 `;
 
-export const DefaultButton = styled(Button)`${props => styleButton(props.theme.default)}`;
-export const PrimaryButton = styled(Button)`${props => styleButton(props.theme.primary)}`;
-export const SuccessButton = styled(Button)`${props => styleButton(props.theme.success)}`;
-export const WarningButton = styled(Button)`${props => styleButton(props.theme.warning)}`;
-export const DangerButton = styled(Button)`${props => styleButton(props.theme.danger)}`;
-export const LightButton = styled(Button)`${props => styleButton(props.theme.light)}`;
-export const DarkButton = styled(Button)`${props => styleButton(props.theme.dark)}`;
+export const DefaultButton = styled(Button)`${props => styleButton(props, props.theme.default)}`;
+export const PrimaryButton = styled(Button)`${props => styleButton(props, props.theme.primary)}`;
+export const SuccessButton = styled(Button)`${props => styleButton(props, props.theme.success)}`;
+export const WarningButton = styled(Button)`${props => styleButton(props, props.theme.warning)}`;
+export const DangerButton = styled(Button)`${props => styleButton(props, props.theme.danger)}`;
+export const LightButton = styled(Button)`${props => styleButton(props, props.theme.light)}`;
+export const DarkButton = styled(Button)`${props => styleButton(props, props.theme.dark)}`;
 
 export default DefaultButton;

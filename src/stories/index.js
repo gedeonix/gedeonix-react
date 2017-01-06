@@ -8,7 +8,7 @@ import Body from "../components/Body";
 import Avatar from '../components/Avatar';
 import { Container, FluidContainer } from '../components/Container';
 import Button, {PrimaryButton, SuccessButton, WarningButton, DangerButton, LightButton, DarkButton} from '../components/Button';
-import Icon from '../components/Icon';
+import { Icon, IconButton } from '../components/Icon';
 import { Row, Col } from '../components/Grid';
 import { Table, Th, Td } from '../components/Table';
 import AppBar from '../components/AppBar';
@@ -33,6 +33,33 @@ storiesOf('Components', module)
         <LightButton onClick={action('clicked')}>Light</LightButton>
         <DarkButton onClick={action('clicked')}>Dark</DarkButton>
 
+        <h2>Round</h2>
+        <Button onClick={action('clicked')} round>Default</Button>
+        <PrimaryButton onClick={action('clicked')} round>Primary</PrimaryButton>
+        <SuccessButton onClick={action('clicked')} round>Success</SuccessButton>
+        <WarningButton onClick={action('clicked')} round>Warning</WarningButton>
+        <DangerButton onClick={action('clicked')} round>Danger</DangerButton>
+        <LightButton onClick={action('clicked')} round>Light</LightButton>
+        <DarkButton onClick={action('clicked')} round>Dark</DarkButton>
+
+        <h2>Reset radius</h2>
+        <Button onClick={action('clicked')} resetRadius>Default</Button>
+        <PrimaryButton onClick={action('clicked')} resetRadius>Primary</PrimaryButton>
+        <SuccessButton onClick={action('clicked')} resetRadius>Success</SuccessButton>
+        <WarningButton onClick={action('clicked')} resetRadius>Warning</WarningButton>
+        <DangerButton onClick={action('clicked')} resetRadius>Danger</DangerButton>
+        <LightButton onClick={action('clicked')} resetRadius>Light</LightButton>
+        <DarkButton onClick={action('clicked')} resetRadius>Dark</DarkButton>
+
+        <h2>Outline</h2>
+        <Button onClick={action('clicked')} outline>Default</Button>
+        <PrimaryButton onClick={action('clicked')} outline>Primary</PrimaryButton>
+        <SuccessButton onClick={action('clicked')} outline>Success</SuccessButton>
+        <WarningButton onClick={action('clicked')} outline>Warning</WarningButton>
+        <DangerButton onClick={action('clicked')} outline>Danger</DangerButton>
+        <LightButton onClick={action('clicked')} outline>Light</LightButton>
+        <DarkButton onClick={action('clicked')} outline>Dark</DarkButton>
+
         <h2>Size</h2>
         <Button xs>Extra small</Button>
         <Button sm>Small</Button>
@@ -43,12 +70,15 @@ storiesOf('Components', module)
       </Body>
     </ThemeProvider>
   ))
-  .add('Icon', () => (
+  .add('Icon & IconButton', () => (
     <ThemeProvider theme={theme}>
       <Body>
+        <h1>Icon</h1>
         <Icon name="plus"/>
         <Icon name="bars"/>
         <Icon name="minus"/>
+        <h1>IconButton</h1>
+        <IconButton icon="plus" onClick={action('clicked')}/>
       </Body>
     </ThemeProvider>
   ))
