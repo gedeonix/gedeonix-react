@@ -1,15 +1,12 @@
 {
   "name": "gedeonix-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Gedeonix React UI Components",
   "author": "Przemysław Sołtan",
+  "main": "./src/index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "start": "start-storybook -p 9009 -s public",
+    "build": "build-storybook -s public"
   },
   "dependencies": {
     "react": "15.4.2",
@@ -17,7 +14,7 @@
     "styled-components": "1.2.1"
   },
   "devDependencies": {
-    "react-scripts": "0.8.4",
-    "@kadira/storybook": "2.21.0"
+    "react-scripts": "0.8.5",
+    "@kadira/storybook": "2.35.2"
   }
 }
